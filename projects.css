@@ -1,0 +1,55 @@
+#bio{
+    padding-left:20px;
+}
+header {
+    background: #000000;
+    padding-left:20px;
+}
+body {
+    /*height: 100vh; Ask Edwin in 1 on 1*/
+    padding:0;
+    margin: 0;
+}
+
+body h1 {
+    margin: 0;
+}
+/*Header*/
+header h1 {
+    text-align: left;
+    color: #ffffff;
+}
+
+header {
+    background: #000000;
+}
+/*Top Bar*/
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    background-color: #000000
+}
+
+li {
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff
+}
+/*Projects*/
+#projects{
+    display:flex;
+    flex-wrap:wrap;
+    /*align-self:center;
+    align-items:center;*/
+    justify-content: space-between;
+}
+#projects section{
+    /*border:2px solid orange;*/
+    text-align:center;
+    flex-basis:200px;
+}
