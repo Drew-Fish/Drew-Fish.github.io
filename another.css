@@ -1,5 +1,5 @@
-document{
-}
+/* document{
+} */
 body {
     padding: 0;
     margin: 0;
@@ -68,14 +68,21 @@ li a {
 }
 
 /*Projects*/
-
 #projects {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-left:20px;
+    padding-right:20px;
+}
+#projects section {
+    background-color: rgba(63, 63, 63, 0.74);
+    border: 1px solid black;
+    border-radius:12px;
+    margin-bottom:20px;
 }
 
-#projects section {
-    text-align: center;
-    flex-basis: 200px;
+td{
+    border:50px;
 }
