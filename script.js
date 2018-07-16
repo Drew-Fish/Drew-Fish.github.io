@@ -1,3 +1,5 @@
+// Connect Four
+
 let redTurn = true;
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
@@ -8,28 +10,7 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
-const location = document.getElementById("connectfour");
-
-function makeTable() {
-
-    //Creating the table
-    var newTable = document.createElement('table');
-    newTable.id = "table";
-
-    //Iterating through each row in board and creating a tr for it whilst iterating through each item in the row and creating a td for it.
-    for (let row in board) {
-        let newRow = document.createElement('tr')
-        for (let cell in board[row]) {
-            let newCell = document.createElement('td');
-            newCell.id = [row, cell];
-            newCell.className = ('blank');
-            newCell.addEventListener('click', handleClick);
-            newRow.appendChild(newCell);
-        }
-        newTable.appendChild(newRow);
-    }
-    location.appendChild(newTable);
-}
+// const location = document.getElementById("connectfour");
 
 function checkWin(cellRow,cellColumn){
 
@@ -100,7 +81,6 @@ handleClick = function (event) {
     //Getting the id and DOM element for the cell which triggered the event listener
     let cellClickedId = event.target.id.split(",");
     let cellClickedElement = document.getElementById(cellClickedId);
-    console.log(cellClickedElement);
     let cellRow = Number(cellClickedId[0]);
     let cellColumn = Number(cellClickedId[1]);
 
@@ -134,9 +114,12 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        let table = document.getElementById("table");
-        // document.body.removeChild(table);
-        makeTable(board);
+        var cells = document.querySelectorAll("td");
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].className = ('blank');
+        }
+
+        
     }else if (checkTie()){
         alert("This is a tie. Congratulations on both being losers.");
         board = [
@@ -149,12 +132,20 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        let table = document.getElementById("table");
-        // document.body.removeChild(table);
-        makeTable(board);
+        var cells = document.querySelectorAll("td");
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].className = ('blank');
+        }
+
     }else{
         redTurn = !redTurn;
         }
 }
 
-makeTable(board);
+//Adding Event Listeners
+let cells = document.querySelectorAll("td");
+for (let i = 0; i < cells.length; i++) {
+    cells[i].addEventListener('click', handleClick);
+}
+
+// Images
