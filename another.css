@@ -107,3 +107,14 @@ td:hover{
 .blank{
     background:rgba(0,0,0,0);
 }
+
+/* Rock Paper Scissors */
+#userButtons{
+    display:flex;
+    justify-content: space-around;
+}
+#computer{
+    margin-top:18.720px;
+    display: flex;
+    justify-content: center;
+}
