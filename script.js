@@ -10,8 +10,6 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
-// const location = document.getElementById("connectfour");
-
 function checkWin(cellRow, cellColumn) {
 
     //Checking for horizontal wins on row which triggered event
@@ -114,9 +112,9 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        const cellsCF = document.getElementsByClassName("classname");
-        for (let i = 0; i < cellsCF.length; i++) {
-            cellsCF[i].className = ('blank');
+        let cells = document.querySelectorAll("td");
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].className = ('blank');
         }
 
 
@@ -132,7 +130,7 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        const cells = document.getElementsByClassName("classname");
+        let cells = document.querySelectorAll("td");
         for (let i = 0; i < cells.length; i++) {
             cells[i].className = ('blank');
         }
@@ -143,9 +141,9 @@ handleClick = function (event) {
 }
 
 //Adding Event Listeners
-const cellsEL = document.getElementsByClassName("classname");
-for (let i = 0; i < cellsEL.length; i++) {
-    cellsEL[i].addEventListener('click', handleClick);
+let cells = document.querySelectorAll("td");
+for (let i = 0; i < cells.length; i++) {
+    cells[i].addEventListener('click', handleClick);
 }
 
 
