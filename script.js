@@ -114,9 +114,9 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        var cells = document.querySelectorAll("td");
-        for (let i = 0; i < cells.length; i++) {
-            cells[i].className = ('blank');
+        const cellsCF = document.getElementsByClassName("classname");
+        for (let i = 0; i < cellsCF.length; i++) {
+            cellsCF[i].className = ('blank');
         }
 
 
@@ -132,7 +132,7 @@ handleClick = function (event) {
         ]
         redTurn = true;
         winningPlayer = "";
-        var cells = document.querySelectorAll("td");
+        const cells = document.getElementsByClassName("classname");
         for (let i = 0; i < cells.length; i++) {
             cells[i].className = ('blank');
         }
@@ -143,12 +143,14 @@ handleClick = function (event) {
 }
 
 //Adding Event Listeners
-let cells = document.querySelectorAll("td");
-for (let i = 0; i < cells.length; i++) {
-    cells[i].addEventListener('click', handleClick);
+const cellsEL = document.getElementsByClassName("classname");
+for (let i = 0; i < cellsEL.length; i++) {
+    cellsEL[i].addEventListener('click', handleClick);
 }
 
+
 // Rock Paper Scissors
+
 const wonTag = document.getElementById("whoWon");
 const computerImg = document.getElementById("computerImg");
 let userScore = 0;
@@ -169,7 +171,7 @@ scissorsButton.onclick = function () {
 function runGame(userPlay) {
     let computerPlay = getRandomInt(0, 3);
     computerImageSwitch(computerPlay);
-    let winner = checkWinner(userPlay, computerPlay);
+    let winner = checkWinnerRPC(userPlay, computerPlay);
     if (winner == "user") {
         userScore++;
         userScore_label.textContent = userScore;
@@ -192,7 +194,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function checkWinner(user, comp) {
+function checkWinnerRPC(user, comp) {
     if (user == comp) {
         return ("tie");
     } else if (user == 0 && comp == 2) {

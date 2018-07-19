@@ -112,7 +112,6 @@ td:hover{
 #userButtons{
     display:flex;
     justify-content: space-around;
-    flex-basis: 33%;
 }
 #computer{
     margin-top:18.720px;
